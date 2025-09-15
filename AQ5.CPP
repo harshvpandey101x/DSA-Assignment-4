@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 using namespace std;
-
+//PART A
 queue<int> q1, q2;
 
 void push(int x) {
@@ -19,7 +19,7 @@ void pop(){
         cout<<"Stack is empty!\n";
         return;
     }
-    cout<<"Popped: "<< q1.front()<<endl;
+    cout<<"Popped: "<< q1.front() <<endl;
     q1.pop();
 }
 
@@ -48,13 +48,17 @@ int main() {
     pop();
 }
 
+
+
+//PART B
 queue<int> q;
 
 void push(int x) {
     int size = q.size();
     q.push(x);
 
-    for (int i=0;i<size;i++) {
+    // Rotate elements to make new element front
+    for (int i=0; i<size; i++) {
         q.push(q.front());
         q.pop();
     }
@@ -93,4 +97,3 @@ int main(){
     pop();
     pop();
 }
-
